@@ -22,6 +22,9 @@
         #mutableTable .table th {
             text-align: center;
         }
+        .input.is-danger {
+            border-color: red;
+        }
     </style>
 </head>
 <body>
@@ -56,9 +59,13 @@
                 </div>
             </div>
 
+            <div id="functionParams" class="box" style="display: none">
+                <div><label id="aLabel" for="a">a:</label><input class="input" size="10" id="a" type="text"></div>
+                <div><label id="bLabel" for="b">b:</label><input class="input" size="10" id="b" type="text"></div>
+                <div><label id="nLabel" for="n">n:</label><input class="input" size="10" id="n" type="text"></div>
+            </div>
 
-
-            <div id="function" style="display: none">
+            <div id="function" class="box" style="display: none">
                 <div class="control has-text-left">
                     <div class="py-3">
                         <label class="radio">
@@ -85,12 +92,12 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <th>1</th>
-                        <th>2</th>
+                        <th class="xColumn">1</th>
+                        <th class="yColumn">2</th>
                     </tr>
                     <tr>
-                        <th>3</th>
-                        <th>4</th>
+                        <th class="xColumn">3</th>
+                        <th class="yColumn">4</th>
                     </tr>
                     </tbody>
                 </table>
@@ -106,19 +113,19 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <th><input type="text"></th>
-                        <th><input type="text"></th>
+                        <th><input class="xColumn" type="text"></th>
+                        <th><input class="yColumn" type="text"></th>
                     </tr>
                     <tr>
-                        <th><input type="text"></th>
-                        <th><input type="text"></th>
+                        <th><input class="xColumn" type="text"></th>
+                        <th><input class="yColumn" type="text"></th>
                     </tr>
                     </tbody>
                 </table>
-                <button id="add" class="button is-dark px-3 mx-4">add row</button>
-                <button id="remove" class="button is-dark px-3 mx-4">remove row</button>
-                <button id="fill" class="button is-dark px-3 mx-4">fill random</button>
-                <button id="clear" class="button is-dark px-3 mx-4">clear</button>
+                <button id="add" class="button is-dark px-3 mx-4 my-2">добавить строку</button>
+                <button id="remove" class="button is-dark px-3 mx-4 my-2">удалить строку</button>
+                <button id="fill" class="button is-dark px-3 mx-4 my-2">заполнить</button>
+                <button id="clear" class="button is-dark px-3 mx-4 my-2">очистить</button>
             </div>
         </div>
         <div class="column is-5">Здесь будет график</div>
@@ -141,5 +148,6 @@
 <script src="<c:url value="/js/fileWorker.js"/>"></script>
 <script src="<c:url value="/js/tableListener.js"/>"></script>
 <script src="<c:url value="/js/tableButtons.js"/>"></script>
+<script src="<c:url value="/js/functionParamsListener.js"/>"></script>
 </body>
 </html>

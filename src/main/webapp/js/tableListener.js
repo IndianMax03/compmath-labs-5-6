@@ -1,18 +1,33 @@
 //  created by Raj Manu on 21.05.2023
 
-//todo: остановился на том, что вешаю слушаелей на ячейки таблицы, чтобы избавиться от повторов x и в принципе невалидных значений
 const updateRowListeners = () => {
-    let firstRowElements = mutableTable.querySelectorAll('tbody tr > *:first-child');
-    console.log("updated")
+    let xInputs = mutableTable.querySelectorAll('.xColumn');
+    let yInputs = mutableTable.querySelectorAll('.yColumn');
 
-    firstRowElements.forEach((element) => {
+    xInputs.forEach((element) => {
+        element.removeEventListener('input', inputListener);
+        element.removeEventListener('change', inputListener);
+        element.addEventListener('input', inputListener);
+        element.addEventListener('change', inputListener);
+    });
 
-        element.addEventListener('change', (event) => {
-            const value = event.target.value;
-            console.log(value)
-        });
+    yInputs.forEach((element) => {
+        element.removeEventListener('input', inputListener);
+        element.removeEventListener('change', inputListener);
+        element.addEventListener('input', inputListener);
+        element.addEventListener('change', inputListener);
     });
 };
+
+const inputListener = (event) => {
+    const valueLine = event.target.value.replaceAll(" ", "");
+    const value = valueLine !== "" ? Number(valueLine.replaceAll(",", ".")) : NaN;
+    if (isNaN(value)) {
+        event.target.parentElement.classList.add("is-danger");
+    } else {
+        event.target.parentElement.classList.remove("is-danger");
+    }
+}
 
 updateRowListeners();
 

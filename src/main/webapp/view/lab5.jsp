@@ -12,7 +12,7 @@
     <style>
         * {
             font-family: 'Aclonica', math !important;
-            font-size: 18px;
+            font-size: 16px;
         }
         #immutableTable .table td,
         #immutableTable .table th {
@@ -31,7 +31,7 @@
 
 <section class="section">
     <div class="columns is-centered is-vcentered has-text-centered">
-        <div class="column is-5">
+        <div class="column is-4">
             <div class="py-3">
                 <div class="py-2">
                     <label for="data">Выберите способ задания входных данных:</label>
@@ -82,7 +82,7 @@
                 </div>
             </div>
 
-            <div id="immutableTable" style="display: none">
+            <div id="immutableTable" class="box" style="display: none">
                 <table class="table is-fullwidth">
                     <thead>
                     <tr>
@@ -92,18 +92,14 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <th class="xColumn">1</th>
-                        <th class="yColumn">2</th>
-                    </tr>
-                    <tr>
-                        <th class="xColumn">3</th>
-                        <th class="yColumn">4</th>
+                        <th class="xColumn"></th>
+                        <th class="yColumn"></th>
                     </tr>
                     </tbody>
                 </table>
             </div>
 
-            <div id="mutableTable" style="display: none">
+            <div id="mutableTable" class="box" style="display: none">
                 <table class="table is-fullwidth">
                     <thead>
                     <tr>
@@ -122,11 +118,26 @@
                     </tr>
                     </tbody>
                 </table>
-                <button id="add" class="button is-dark px-3 mx-4 my-2">добавить строку</button>
-                <button id="remove" class="button is-dark px-3 mx-4 my-2">удалить строку</button>
+                <button id="add" class="button is-dark px-3 mx-4 my-2">добавить</button>
+                <button id="remove" class="button is-dark px-3 mx-4 my-2">удалить</button>
                 <button id="fill" class="button is-dark px-3 mx-4 my-2">заполнить</button>
                 <button id="clear" class="button is-dark px-3 mx-4 my-2">очистить</button>
             </div>
+
+            <div id="xToFindDiv" class="box">
+                <div><label id="xLabel" for="x">Искомый x:</label><input class="input" size="10" id="x" type="text"></div>
+            </div>
+
+
+            <div id="submitDiv">
+                <div><button id="submitButton" class="button is-dark">Найти y!</button></div>
+            </div>
+
+            <div id="submitHelper" class="notification is-centered is-danger has-text-centered my-3" style="display: none">
+                <button id="notificationButton" class="delete"></button>
+                Оповещение!
+            </div>
+
         </div>
         <div class="column is-5">Здесь будет график</div>
     </div>
@@ -143,11 +154,12 @@
     </div>
 </section>
 
-<script src="<c:url value="/js/formatter.js"/>"></script>
-<script src="<c:url value="/js/dataInputListener.js"/>"></script>
-<script src="<c:url value="/js/fileWorker.js"/>"></script>
-<script src="<c:url value="/js/tableListener.js"/>"></script>
-<script src="<c:url value="/js/tableButtons.js"/>"></script>
-<script src="<c:url value="/js/functionParamsListener.js"/>"></script>
+<script src="<c:url value="/js/lab5/formatter.js"/>"></script>
+<script src="<c:url value="/js/lab5/dataInputListener.js"/>"></script>
+<script src="<c:url value="/js/lab5/fileWorker.js"/>"></script>
+<script src="<c:url value="/js/lab5/tableListener.js"/>"></script>
+<script src="<c:url value="/js/lab5/tableButtons.js"/>"></script>
+<script src="<c:url value="/js/lab5/functionParamsListener.js"/>"></script>
+<script src="<c:url value="/js/lab5/xListener.js"/>"></script>
+<script src="<c:url value="/js/lab5/submitting.js"/>"></script>
 </body>
-</html>

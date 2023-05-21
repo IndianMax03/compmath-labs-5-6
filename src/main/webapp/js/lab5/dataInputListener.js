@@ -37,5 +37,5 @@ dataSelection.addEventListener('change', (event) => {
             mutableTableDiv.style.display = 'none'
             break
     }
-
+    validateX();
 })

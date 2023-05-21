@@ -14,6 +14,7 @@ clearButton.addEventListener('click', (event) => {
     inputElements.forEach((input) => {
         input.value = "";
     });
+    validateX()
 })
 
 fillButton.addEventListener('click', (event) => {
@@ -21,6 +22,7 @@ fillButton.addEventListener('click', (event) => {
     inputElements.forEach((input) => {
         input.value = input.value !== "" ? input.value : (Math.random() * 100 - 50).toFixed(FRACTION_DIGIT_COUNT);
     });
+    validateX()
 })
 
 addButton.addEventListener('click', (event) => {

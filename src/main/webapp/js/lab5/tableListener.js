@@ -27,6 +27,7 @@ const inputListener = (event) => {
     } else {
         event.target.parentElement.classList.remove("is-danger");
     }
+    validateX()
 }
 
 updateRowListeners();

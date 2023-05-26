@@ -29,7 +29,7 @@ const validateAndFillTable = () => {
     let nLine = nInput.value.replaceAll(" ", "");
     let nValue = nLine !== "" ? Number(nLine.replaceAll(",", ".")) : NaN;
 
-    if (nLine.includes('.')) {
+    if (nLine.includes('.') || nLine.includes(',')) {
         nInput.classList.add("is-danger");
         return;
     } else {

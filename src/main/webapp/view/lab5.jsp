@@ -139,7 +139,9 @@
             </div>
 
         </div>
-        <div class="column is-5">Здесь будет график</div>
+        <div id="graphicFrame" class="column is-5">
+            <canvas id="graphic"></canvas>
+        </div>
     </div>
 </section>
 

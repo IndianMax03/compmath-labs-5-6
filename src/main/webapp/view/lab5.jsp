@@ -31,7 +31,7 @@
 
 <section class="section">
     <div class="columns is-centered is-vcentered has-text-centered">
-        <div class="column is-4">
+        <div class="column is-6">
             <div class="py-3">
                 <div class="py-2">
                     <label for="data">Выберите способ задания входных данных:</label>
@@ -135,11 +135,34 @@
 
             <div id="submitHelper" class="notification is-centered is-danger has-text-centered my-3" style="display: none">
                 <button id="notificationButton" class="delete"></button>
-                Оповещение!
+                1) данные - это числа,<br>
+                2) искомый X не принадлежит узлам интерполяции,<br>
+                3) искомый X внутри интервала,<br>
+                4) b > a,<br>
+                5) n - натуральное от 2 до 20<br>
+                6) файл в формате json
             </div>
 
         </div>
-        <div id="graphicFrame" class="column is-5">
+    </div>
+</section>
+
+<section class="section">
+    <div class="columns is-centered is-vcentered has-text-centered">
+        <div class="column is-4">
+            <div class="field">
+                <label class="label" for="result">Результат:</label>
+                <div class="control">
+                    <textarea id="result" class="textarea" rows="4" cols="10" readonly></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="columns is-centered is-vcentered has-text-centered">
+        <div id="graphicFrame" class="column is-12">
             <canvas id="graphic"></canvas>
         </div>
     </div>
@@ -147,11 +170,9 @@
 
 <section class="section">
     <div class="columns is-centered is-vcentered has-text-centered">
-        <div class="column is-5">
-            Найденное значение x
-        </div>
-        <div class="column is-5">
-            Таблица конечных разностей
+        <div class="column is-12">
+            <div id="finiteDifferencesTable" class="box">
+            </div>
         </div>
     </div>
 </section>

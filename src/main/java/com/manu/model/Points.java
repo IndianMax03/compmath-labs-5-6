@@ -1,6 +1,7 @@
 package com.manu.model;
 
 import com.manu.functions.LagrangeFunction;
+import com.manu.functions.NewtonFunction;
 
 import java.util.*;
 
@@ -9,6 +10,7 @@ public class Points {
     private ArrayList<Double> y;
     private Double desiredX;
     private LagrangeFunction lagrangeFunction;
+    private NewtonFunction newtonFunction;
 
     public Points() {
     }
@@ -37,8 +39,31 @@ public class Points {
         this.lagrangeFunction = new LagrangeFunction(this.x, this.y);
     }
 
+    public void generateNewtonFunction(Map<String, ArrayList<Double>> finiteDifferences) {
+        this.newtonFunction = new NewtonFunction(this.x, this.y, finiteDifferences);
+    }
+
     public boolean isValid() {
-        return new HashSet<>(x).size() == x.size() && desiredX <= x.get(x.size() - 1) && desiredX >= x.get(0) && !x.contains(desiredX);
+
+        boolean validIntervals = true;
+
+        double step = Math.abs(x.get(1) - x.get(0));
+        final double epsilon = 1e-10;
+
+        if (x.size() != 2) {
+
+            for (int i = 2; i < x.size(); i++) {
+                double cur = x.get(i);
+                double prev = x.get(i-1);
+                double curStep = Math.abs(cur - prev);
+                if (Math.abs(curStep - step) > epsilon) {
+                    validIntervals = false;
+                }
+            }
+
+        }
+
+        return new HashSet<>(x).size() == x.size() && validIntervals && desiredX <= x.get(x.size() - 1) && desiredX >= x.get(0) && !x.contains(desiredX);
     }
 
     public ArrayList<Double> getX() {
@@ -67,6 +92,9 @@ public class Points {
 
     public LagrangeFunction getLagrangeFunction() {
         return lagrangeFunction;
+    }
+    public NewtonFunction getNewtonFunction() {
+        return newtonFunction;
     }
 
     @Override

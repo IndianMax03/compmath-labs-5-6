@@ -2,7 +2,7 @@
 
 const MIN_ROW_COUNT = 2
 const MAX_ROW_COUNT = 20
-const FRACTION_DIGIT_COUNT = 4
+const FRACTION_DIGIT_COUNT = 12
 const fillButton = document.getElementById("fill")
 const clearButton = document.getElementById("clear")
 const addButton = document.getElementById("add")
@@ -18,8 +18,15 @@ clearButton.addEventListener('click', (event) => {
 })
 
 fillButton.addEventListener('click', (event) => {
-    const inputElements = mutableTable.querySelectorAll('input[type="text"]');
-    inputElements.forEach((input) => {
+
+    const xValues = document.querySelectorAll('#mutableTable .xColumn')
+    const yValues = document.querySelectorAll('#mutableTable .yColumn')
+
+    xValues.forEach((input, index) => {
+        input.value = (index+1);
+    })
+
+    yValues.forEach((input) => {
         input.value = input.value !== "" ? input.value : (Math.random() * 100 - 50).toFixed(FRACTION_DIGIT_COUNT);
     });
     validateX()

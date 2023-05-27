@@ -2,7 +2,7 @@ package com.manu.functions;
 
 import java.util.ArrayList;
 
-public class LagrangeFunction {
+public class LagrangeFunction implements InterpolationFunction {
 
     private final ArrayList<Double> x;
     private final ArrayList<Double> y;
@@ -14,7 +14,8 @@ public class LagrangeFunction {
         this.N = x.size();
     }
 
-    public Double f(Double value) {
+    @Override
+    public double f(Double value) {
         double answer = 0d;
 
         for (int i = 0; i < N; i++) {

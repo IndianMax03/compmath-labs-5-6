@@ -1,10 +1,10 @@
-package com.manu.services;
+package com.manu.lab5.services;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.manu.model.Points;
-import com.manu.solvers.LagrangeSolver;
-import com.manu.solvers.NewtonSolver;
+import com.manu.lab5.model.Points;
+import com.manu.lab5.solvers.LagrangeSolver;
+import com.manu.lab5.solvers.NewtonSolver;
 import org.springframework.stereotype.Component;
 
 @Component

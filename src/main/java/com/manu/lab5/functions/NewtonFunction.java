@@ -1,4 +1,4 @@
-package com.manu.functions;
+package com.manu.lab5.functions;
 
 import java.util.ArrayList;
 import java.util.Map;

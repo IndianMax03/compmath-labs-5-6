@@ -1,6 +1,6 @@
-package com.manu.solvers;
+package com.manu.lab5.solvers;
 
-import com.manu.model.Points;
+import com.manu.lab5.model.Points;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,7 +1,7 @@
-package com.manu.model;
+package com.manu.lab5.model;
 
-import com.manu.functions.LagrangeFunction;
-import com.manu.functions.NewtonFunction;
+import com.manu.lab5.functions.LagrangeFunction;
+import com.manu.lab5.functions.NewtonFunction;
 
 import java.util.*;
 

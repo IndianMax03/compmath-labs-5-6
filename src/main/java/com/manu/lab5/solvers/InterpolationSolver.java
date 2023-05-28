@@ -1,6 +1,6 @@
-package com.manu.solvers;
+package com.manu.lab5.solvers;
 
-import com.manu.model.Points;
+import com.manu.lab5.model.Points;
 
 import java.util.ArrayList;
 
@@ -18,7 +18,7 @@ public abstract class InterpolationSolver {
     public InterpolationSolver(Points points) {
         this.points = points;
         this.dataX = points.getX();
-        this.N = dataX.size() * 2;
+        this.N = dataX.size() * 4;
         this.desiredX = points.getDesiredX();
     }
 

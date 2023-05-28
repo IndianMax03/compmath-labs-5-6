@@ -1,7 +1,5 @@
 //  created by Raj Manu on 21.05.2023
 
-
-
 const ctx = $('#graphic')[0].getContext('2d');
 let chart;
 
@@ -195,7 +193,6 @@ submitButton.addEventListener('click', (event) => {
 
             const tableBody = document.createElement("tbody");
 
-            // Заполнение таблицы случайными значениями
             for (let i = 0; i < diffsCount; i++) {
                 const row = document.createElement("tr");
 
@@ -235,21 +232,23 @@ submitButton.addEventListener('click', (event) => {
                     data: [],
                     backgroundColor: 'rgba(255, 99, 132, 0.2)',
                     borderColor: 'rgba(255, 99, 132, 1)',
-                    borderWidth: 4
+                    borderWidth: 6,
                     },
                     {
                         label: 'Лагрик',
                         data: [],
                         backgroundColor: 'rgba(12, 99, 132, 0.2)',
                         borderColor: 'rgba(12, 99, 132, 1)',
-                        borderWidth: 3
+                        borderWidth: 5,
+                        showLine: true
                     },
                     {
                         label: 'Ньютик',
                         data: [],
                         backgroundColor: 'rgba(12, 92229, 132, 0.2)',
                         borderColor: 'rgba(12, 222, 132, 1)',
-                        borderWidth: 5
+                        borderWidth: 8,
+                        showLine: true
                     }
                     ]
             };
